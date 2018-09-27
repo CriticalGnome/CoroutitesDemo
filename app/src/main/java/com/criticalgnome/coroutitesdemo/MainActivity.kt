@@ -30,8 +30,6 @@ class MainActivity : Activity() {
             val todosRequest = JsonPlaceholderApi.getApi().getTodos()
             val usersRequest = JsonPlaceholderApi.getApi().getUsers()
 
-            Log.d("LOGTAG", " All loaders armed!")
-
             val postsResponse = postsRequest.await()
             val commentsResponse = commentsRequest.await()
             val albumsResponse = albumsRequest.await()
