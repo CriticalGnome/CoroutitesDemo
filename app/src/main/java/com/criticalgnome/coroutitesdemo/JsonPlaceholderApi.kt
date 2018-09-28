@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.criticalgnome.coroutitesdemo
 
 import com.criticalgnome.coroutitesdemo.model.*
