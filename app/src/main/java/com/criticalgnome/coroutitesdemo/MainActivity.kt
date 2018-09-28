@@ -23,19 +23,19 @@ class MainActivity : Activity() {
         GlobalScope.launch(Dispatchers.Main) {
             progress.setVisibility(true)
 
-            val postsRequest = JsonPlaceholderApi.getApi().getPosts()
+            val postsRequest    = JsonPlaceholderApi.getApi().getPosts()
             val commentsRequest = JsonPlaceholderApi.getApi().getComments()
-            val albumsRequest = JsonPlaceholderApi.getApi().getAlbums()
-            val photosRequest = JsonPlaceholderApi.getApi().getPhotos()
-            val todosRequest = JsonPlaceholderApi.getApi().getTodos()
-            val usersRequest = JsonPlaceholderApi.getApi().getUsers()
+            val albumsRequest   = JsonPlaceholderApi.getApi().getAlbums()
+            val photosRequest   = JsonPlaceholderApi.getApi().getPhotos()
+            val todosRequest    = JsonPlaceholderApi.getApi().getTodos()
+            val usersRequest    = JsonPlaceholderApi.getApi().getUsers()
 
-            val postsResponse = postsRequest.await()
-            val commentsResponse = commentsRequest.await()
-            val albumsResponse = albumsRequest.await()
-            val photosResponse = photosRequest.await()
-            val todosResponse = todosRequest.await()
-            val usersResponse = usersRequest.await()
+            val postsResponse       = postsRequest.await()
+            val commentsResponse    = commentsRequest.await()
+            val albumsResponse      = albumsRequest.await()
+            val photosResponse      = photosRequest.await()
+            val todosResponse       = todosRequest.await()
+            val usersResponse       = usersRequest.await()
 
             progress.setVisibility(false)
             if (postsResponse.isSuccessful) {
@@ -45,12 +45,12 @@ class MainActivity : Activity() {
                 Toast.makeText(this@MainActivity, "Error ${postsResponse.code()}", Toast.LENGTH_SHORT).show()
             }
 
-            if (postsResponse.isSuccessful) logger("Posts: ${postsResponse.body()?.size}") else logger("Error: ${postsResponse.code()}")
-            if (commentsResponse.isSuccessful) logger("Comments: ${commentsResponse.body()?.size}") else logger("Error: ${commentsResponse.code()}")
-            if (albumsResponse.isSuccessful) logger("Albums: ${albumsResponse.body()?.size}") else logger("Error: ${albumsResponse.code()}")
-            if (photosResponse.isSuccessful) logger("Photos: ${photosResponse.body()?.size}") else logger("Error: ${photosResponse.code()}")
-            if (todosResponse.isSuccessful) logger("Todos: ${todosResponse.body()?.size}") else logger("Error: ${todosResponse.code()}")
-            if (usersResponse.isSuccessful) logger("Users: ${usersResponse.body()?.size}") else logger("Error: ${usersResponse.code()}")
+            if (postsResponse.isSuccessful)     logger("Posts: ${postsResponse.body()?.size}") else         logger("Error: ${postsResponse.code()}")
+            if (commentsResponse.isSuccessful)  logger("Comments: ${commentsResponse.body()?.size}") else   logger("Error: ${commentsResponse.code()}")
+            if (albumsResponse.isSuccessful)    logger("Albums: ${albumsResponse.body()?.size}") else       logger("Error: ${albumsResponse.code()}")
+            if (photosResponse.isSuccessful)    logger("Photos: ${photosResponse.body()?.size}") else       logger("Error: ${photosResponse.code()}")
+            if (todosResponse.isSuccessful)     logger("Todos: ${todosResponse.body()?.size}") else         logger("Error: ${todosResponse.code()}")
+            if (usersResponse.isSuccessful)     logger("Users: ${usersResponse.body()?.size}") else         logger("Error: ${usersResponse.code()}")
         }
     }
 
