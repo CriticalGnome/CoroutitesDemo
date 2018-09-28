@@ -15,9 +15,9 @@ class MainAdapter(var items: List<Post>): RecyclerView.Adapter<MainAdapter.PostH
 
     inner class PostHolder(override val containerView: View): RecyclerView.ViewHolder(containerView), LayoutContainer {
         fun bind(item: Post) {
-            postId.text = item.id.toString()
-            postTitle.text = item.title
-            postBody.text = item.body
+            postId.text     = item.id.toString()
+            postTitle.text  = item.title
+            postBody.text   = item.body
         }
     }
 }
