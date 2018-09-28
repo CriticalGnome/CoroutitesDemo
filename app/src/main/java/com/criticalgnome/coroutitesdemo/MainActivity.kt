@@ -45,20 +45,21 @@ class MainActivity : Activity() {
                 Toast.makeText(this@MainActivity, "Error ${postsResponse.code()}", Toast.LENGTH_SHORT).show()
             }
 
-            if (postsResponse.isSuccessful)     logger("Posts: ${postsResponse.body()?.size}") else         logger("Error: ${postsResponse.code()}")
-            if (commentsResponse.isSuccessful)  logger("Comments: ${commentsResponse.body()?.size}") else   logger("Error: ${commentsResponse.code()}")
-            if (albumsResponse.isSuccessful)    logger("Albums: ${albumsResponse.body()?.size}") else       logger("Error: ${albumsResponse.code()}")
-            if (photosResponse.isSuccessful)    logger("Photos: ${photosResponse.body()?.size}") else       logger("Error: ${photosResponse.code()}")
-            if (todosResponse.isSuccessful)     logger("Todos: ${todosResponse.body()?.size}") else         logger("Error: ${todosResponse.code()}")
-            if (usersResponse.isSuccessful)     logger("Users: ${usersResponse.body()?.size}") else         logger("Error: ${usersResponse.code()}")
+            if (postsResponse.isSuccessful) logger("Posts: ${postsResponse.body()?.size}") else logger("Error: ${postsResponse.code()}")
+            if (commentsResponse.isSuccessful) logger("Comments: ${commentsResponse.body()?.size}") else logger("Error: ${commentsResponse.code()}")
+            if (albumsResponse.isSuccessful) logger("Albums: ${albumsResponse.body()?.size}") else logger("Error: ${albumsResponse.code()}")
+            if (photosResponse.isSuccessful) logger("Photos: ${photosResponse.body()?.size}") else logger("Error: ${photosResponse.code()}")
+            if (todosResponse.isSuccessful) logger("Todos: ${todosResponse.body()?.size}") else logger("Error: ${todosResponse.code()}")
+            if (usersResponse.isSuccessful) logger("Users: ${usersResponse.body()?.size}") else logger("Error: ${usersResponse.code()}")
         }
     }
-}
 
-fun View.setVisibility(isVisible: Boolean) {
-    this.visibility = if (isVisible) View.VISIBLE else View.GONE
-}
+    private fun View.setVisibility(isVisible: Boolean) {
+        this.visibility = if (isVisible) View.VISIBLE else View.GONE
+    }
 
-private fun logger(msg: String) {
-    Log.d("RESPONSE", msg)
+    private fun logger(msg: String) {
+        Log.d("RESPONSE", msg)
+    }
+
 }
