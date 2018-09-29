@@ -13,6 +13,8 @@ import kotlinx.coroutines.experimental.launch
 
 class MainActivity : Activity() {
 
+    val jsonPlaceholderApi = JsonPlaceholderApi.getApi()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,12 +25,12 @@ class MainActivity : Activity() {
         GlobalScope.launch(Dispatchers.Main) {
             progress.setVisibility(true)
 
-            val postsRequest    = JsonPlaceholderApi.getApi().getPosts()
-            val commentsRequest = JsonPlaceholderApi.getApi().getComments()
-            val albumsRequest   = JsonPlaceholderApi.getApi().getAlbums()
-            val photosRequest   = JsonPlaceholderApi.getApi().getPhotos()
-            val todosRequest    = JsonPlaceholderApi.getApi().getTodos()
-            val usersRequest    = JsonPlaceholderApi.getApi().getUsers()
+            val postsRequest    = jsonPlaceholderApi.getPosts()
+            val commentsRequest = jsonPlaceholderApi.getComments()
+            val albumsRequest   = jsonPlaceholderApi.getAlbums()
+            val photosRequest   = jsonPlaceholderApi.getPhotos()
+            val todosRequest    = jsonPlaceholderApi.getTodos()
+            val usersRequest    = jsonPlaceholderApi.getUsers()
 
             val postsResponse       = postsRequest.await()
             val commentsResponse    = commentsRequest.await()
