@@ -4,7 +4,7 @@ package com.criticalgnome.coroutitesdemo
 
 import com.criticalgnome.coroutitesdemo.model.*
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.experimental.CoroutineCallAdapterFactory
-import kotlinx.coroutines.experimental.Deferred
+import kotlinx.coroutines.Deferred
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
